@@ -1,11 +1,10 @@
 ---
-- name: Criar arquivo de teste via Semaphore
+- name: Criar arquivo de teste no Windows via Semaphore
   hosts: all
-  become: yes
+  become: no   # Windows não usa become
 
   tasks:
-    - name: Criar arquivo teste
-      ansible.builtin.file:
-        path: /tmp/semaphore_test.txt
+    - name: Criar arquivo no Downloads do usuário
+      ansible.windows.win_file:
+        path: "C:\\Users\\guilherme.castro\\Downloads\\semaphore_test.txt"
         state: touch
-        mode: '0644'
