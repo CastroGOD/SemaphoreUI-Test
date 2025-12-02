@@ -1,0 +1,11 @@
+---
+- name: Criar arquivo de teste via Semaphore
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Criar arquivo teste
+      ansible.builtin.file:
+        path: /home/semaphore_test.txt
+        state: touch
+        mode: '0644'
