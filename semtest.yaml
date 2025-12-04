@@ -1,7 +1,7 @@
 ---
 - name: Criar arquivo de teste no Windows via Semaphore
   hosts: all
-  become: no   # Windows não usa become
+  become: no   
 
   tasks:
     - name: Criar arquivo no Downloads do usuário
